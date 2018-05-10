@@ -115,39 +115,42 @@ public class balanzas extends javax.swing.JFrame {
     }//GEN-LAST:event_jTFPesoActionPerformed
 
     private void jBIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresarActionPerformed
-        // TODO add your handling code here:
-        if (jTFPeso.equals("")){
-             JOptionPane.showMessageDialog(this, "No puede Estar Vacio El Campo y debe ser numerico");
-        }
-        numPesos=Integer.parseInt(jTFPeso.getText());
-        System.out.println(numPesos);
-        int[] pesas=new int[numPesos];
-        int cont=1;
-        if (numPesos<=10){
-        jBIngresar.disable();
-        for (int i = 0; i < numPesos; i++) {
-             String aux=JOptionPane.showInputDialog("pesa"+cont+":");
-             if (aux.equals("")){
-                 JOptionPane.showMessageDialog(this, "No puede Estar Vacio El Campo y debe ser numerico");
-             }else{
-                try{
-                    int  pesa=Integer.parseInt(aux);
-                    pesas[i]=pesa;
-                    System.out.println(pesa);
-                    cont++;
-                }catch(Exception ex){
-                    JOptionPane.showMessageDialog(this, "No puede Estar Vacio El Campo y debe ser numerico");
-                }
-             }
-        }
-        }else {
-            JOptionPane.showMessageDialog(this, "el numero de pesas debe ser inferior a 10");
+        // T1ODO add your handling code here:
+        if (!jTFPeso.getText().equals("")){
+            
+            numPesos=Integer.parseInt(jTFPeso.getText());
+            System.out.println(numPesos);
+            int[] pesas=new int[numPesos];
+            int cont=1;
+            if (numPesos<=10){
+            jBIngresar.disable();
+            for (int i = 0; i < numPesos; i++) {
+                 String aux=JOptionPane.showInputDialog("pesa"+cont+":");
+                 if (aux.equals("")){
+                     JOptionPane.showMessageDialog(this, "No puede Estar Vacio El Campo y debe ser numerico");
+                 }else{
+                    try{
+                        int  pesa=Integer.parseInt(aux);
+                        pesas[i]=pesa;
+                        System.out.println(pesa);
+                        cont++;
+                    }catch(Exception ex){
+                        JOptionPane.showMessageDialog(this, "No puede Estar Vacio El Campo y debe ser numerico");
+                    }
+                 }
+            }
+            }else {
+                JOptionPane.showMessageDialog(this, "el numero de pesas debe ser inferior a 10");
+
+            }
+            for (int i = 0; i < numPesos; i++) {
+                System.out.println(pesas[i]);
+            }
        
+        
+        }else{
+            JOptionPane.showMessageDialog(this, "No puede estar vacio el campo");
         }
-        for (int i = 0; i < numPesos; i++) {
-            System.out.println(pesas[i]);
-        }
-       
         
     }//GEN-LAST:event_jBIngresarActionPerformed
 
